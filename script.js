@@ -1,13 +1,11 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const button = document.getElementById("clickMe");
-  button.addEventListener("click", function () {
-    const messages = [
-      "أهلاً بك في Nexdo 🎉",
-      "نحن هنا لننجز المهام باحتراف 🚀",
-      "يومك جميل مع Nexdo! 🌟",
-      "انطلق نحو الإنتاجية 🧠"
-    ];
-    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-    alert(randomMessage);
-  });
-});
+function addTask() {
+  var input = document.getElementById("taskInput");
+  var task = input.value.trim();
+  if (task === "") return;
+
+  var li = document.createElement("li");
+  li.textContent = task;
+
+  document.getElementById("taskList").appendChild(li);
+  input.value = "";
+}
