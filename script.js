@@ -1,11 +1,40 @@
 function addTask() {
-  var input = document.getElementById("taskInput");
-  var task = input.value.trim();
-  if (task === "") return;
+    const taskInput = document.getElementById('taskInput');
+    const taskText = taskInput.value.trim();
 
-  var li = document.createElement("li");
-  li.textContent = task;
+    if (taskText === '') {
+        alert('Please enter a task');
+        return;
+    }
 
-  document.getElementById("taskList").appendChild(li);
-  input.value = "";
+    const taskList = document.getElementById('taskList');
+    const listItem = document.createElement('li');
+
+    // Task text span
+    const taskSpan = document.createElement('span');
+    taskSpan.textContent = taskText;
+
+    // Complete button
+    const completeButton = document.createElement('button');
+    completeButton.innerHTML = '✔'; // Green checkmark icon
+    completeButton.onclick = () => {
+        taskSpan.classList.toggle('completed');
+    };
+
+    // Remove button
+    const removeButton = document.createElement('button');
+    removeButton.textContent = 'Remove';
+    removeButton.className = 'remove-btn';
+    removeButton.onclick = () => {
+        taskList.removeChild(listItem);
+    };
+
+    // Append everything
+    listItem.appendChild(completeButton);
+    listItem.appendChild(taskSpan);
+    listItem.appendChild(removeButton);
+
+    taskList.appendChild(listItem);
+
+    taskInput.value = ''; // Clear input field
 }
