@@ -1,42 +1,66 @@
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to right, #e0f0ff, #ffffff);
-  text-align: center;
-  padding: 60px;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(to right, #e6f2ff, #ffffff);
   margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
 .container {
-  max-width: 500px;
-  margin: 0 auto;
-  background: white;
-  box-shadow: 0 10px 20px rgba(0, 86, 179, 0.2);
-  padding: 40px;
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
   border-radius: 16px;
-  animation: fadeIn 0.8s ease;
+  padding: 30px 40px;
+  box-shadow: 0 12px 24px rgba(0, 86, 179, 0.2);
+}
+
+.logo {
+  width: 80px;
+  margin-bottom: 20px;
 }
 
 h1 {
   color: #004a99;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
-button {
+p {
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.todo input {
+  width: 70%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.todo button {
   background-color: #0072e3;
   color: white;
+  padding: 12px 20px;
   border: none;
-  padding: 12px 28px;
-  font-size: 16px;
   border-radius: 8px;
+  margin-left: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #004a99;
+.todo button:hover {
+  background-color: #005bb5;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+#taskList {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+#taskList li {
+  padding: 10px;
+  background: #f2f7ff;
+  margin: 5px 0;
+  border-radius: 6px;
+  text-align: right;
 }
